@@ -74,6 +74,15 @@
 
     <v-main>
         <router-view></router-view>
+        <v-btn 
+          class="float-right mx-6" 
+          @click="scrollToTop()"
+          color="secondary" 
+          icon 
+          x-large
+        >
+          <v-icon>mdi-arrow-up</v-icon>
+        </v-btn>
     </v-main> 
 
     <v-footer
@@ -145,6 +154,13 @@ export default {
     changeLanguage(lang){
       this.selectedLanguage = lang
       this.$i18n.locale = lang
+    },
+    scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior:'smooth'
+      });
+
     }
   }
 };
