@@ -5,6 +5,7 @@ import VueRouter from 'vue-router'
 import { routes } from './routes.js';
 import { store } from './store/store.js' //main dosyada import edilir. 
 import i18n from './i18n.js';
+import denemeMixin from './mixins/denemeMixin';
 
 Vue.config.productionTip = false
 
@@ -13,6 +14,8 @@ Vue.use(VueRouter)
 const router = new VueRouter({
   routes
 });
+
+Vue.mixin(denemeMixin)
 
 new Vue({
   vuetify,

@@ -1,31 +1,17 @@
 <template>
   <div>
-    <div v-for="todo in todos" :key="todo.id" data-test="todo">
-        {{ todo.text }}
+    <div v-for="product, index in products" :key="index">
+        {{ product }}
     </div>
+ 
   </div>
 </template>
 
 <script>
+import productMixin from '@/mixins/productMixin'
+
 export default {
-    name:'TodoApp',
-    data() {
-        return {
-            todos: [
-                {
-                    id: 1,
-                    text: "Hello! learn Vue"
-                }
-            ]
-        }
-    },
-
-    methods: {
-        deneme() {
-            console.log("merhaba")
-        }
-    }
-
+  mixins: [productMixin]
 }
 </script>
 
